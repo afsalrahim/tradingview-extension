@@ -7,7 +7,7 @@ async function automateWatchlistCreation() {
   await clickWatchlistsButton();
   await wait();
   await clickMenuItem('Create new list');
-  await wait();
+  await wait(1000);
 
   // Step 2: Fill in the date and save
   await fillAndSaveWatchlistName();
@@ -201,7 +201,7 @@ async function addStocks(screener) {
   if (!screenerTitleBtn) {
     // retry after opening screener
     await openScreener(); 
-    await wait(2000);
+    await wait(1000);
     screenerTitleBtn = document.querySelector('div[role="button"][data-name="screener-topbar-screen-title"]');
     if (!screenerTitleBtn) {
       console.error("Could not find 'Screener Title' button.");
@@ -217,7 +217,7 @@ async function addStocks(screener) {
     return;
   }
   screenerScreenActionsLoadScreen.click();
-  await wait(2000);
+  await wait(1000);
 
   let dataTitle = screener;
   const screenerScreenActionsLoadScreenListItem = document.querySelector('div[data-role="list-item"][data-title="' + dataTitle + '"]');

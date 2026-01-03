@@ -63,11 +63,10 @@ async function fillAndSaveWatchlistName() {
   if (hour >= 0 && hour < 11) {
     useDate.setDate(useDate.getDate() - 1);
   }
-  const year = useDate.getFullYear().toString().slice(-2);
+  const year = useDate.getFullYear();
   const mm = String(useDate.getMonth() + 1).padStart(2, '0');
-  const MMM = useDate.toLocaleString('en-US', { month: 'short' }).toUpperCase();
   const DD = String(useDate.getDate()).padStart(2, '0');
-  const dateText = `${year}${mm}${MMM} ${DD}`;
+  const dateText = `${year}-${mm}-${DD}`;
   nameInput.value = `🗓️ ${dateText}`;
   nameInput.dispatchEvent(new Event('input', { bubbles: true }));
   console.log('Typed date:', dateText);

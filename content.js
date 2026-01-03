@@ -27,7 +27,7 @@ async function automateWatchlistCreation() {
     await clickWatchlistsButton();
     await wait();
     await clickMenuItem('Add section');
-    await wait();
+    // await wait();
   }
 
   for (let i = 0; i < numberOfSections; i++) {
@@ -39,7 +39,7 @@ async function automateWatchlistCreation() {
 }
 
 // Helper for 1s wait
-const wait = (ms = 600) => new Promise(res => setTimeout(res, ms));
+const wait = (ms = 500) => new Promise(res => setTimeout(res, ms));
 
 // Helper for right click
 function rightClick(el) {

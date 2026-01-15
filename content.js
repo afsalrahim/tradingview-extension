@@ -183,7 +183,7 @@ async function openScreener() {
     return;
   }
   screenersBtn.click();
-  await wait(2000);
+  await wait();
 
   const splitViewBtn = document.querySelector('button[data-qa-id="split-view-button"]');
   if (!splitViewBtn) {
@@ -191,7 +191,7 @@ async function openScreener() {
     return;
   }
   splitViewBtn.click();
-  await wait(2000);
+  await wait();
 }
 
 async function addStocks(screener) {
@@ -201,7 +201,7 @@ async function addStocks(screener) {
   if (!screenerTitleBtn) {
     // retry after opening screener
     await openScreener(); 
-    await wait(1000);
+    await wait();
     screenerTitleBtn = document.querySelector('div[role="button"][data-name="screener-topbar-screen-title"]');
     if (!screenerTitleBtn) {
       console.error("Could not find 'Screener Title' button.");
@@ -217,7 +217,7 @@ async function addStocks(screener) {
     return;
   }
   screenerScreenActionsLoadScreen.click();
-  await wait(1000);
+  await wait();
 
   let dataTitle = screener;
   const screenerScreenActionsLoadScreenListItem = document.querySelector('div[data-role="list-item"][data-title="' + dataTitle + '"]');
@@ -226,7 +226,7 @@ async function addStocks(screener) {
     return;
   }
   screenerScreenActionsLoadScreenListItem.click();
-  await wait(2000);
+  await wait();
 
   // const tbody = document.querySelector('tbody[tabindex="100"]');
   // if (!tbody) {
